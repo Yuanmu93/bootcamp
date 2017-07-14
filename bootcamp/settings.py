@@ -1,6 +1,7 @@
 import dj_database_url
 from decouple import Csv, config
 from unipath import Path
+import os 
 
 PROJECT_DIR = Path(__file__).parent
 
@@ -13,9 +14,10 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
@@ -76,9 +78,9 @@ TEMPLATES = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -88,7 +90,7 @@ USE_TZ = True
 
 LANGUAGES = (
     ('en', 'English'),
-    ('pt-br', 'Portuguese'),
+    ('zh-Hans', 'Chinese'),
     ('es', 'Spanish')
 )
 
