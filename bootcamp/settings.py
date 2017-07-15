@@ -101,7 +101,7 @@ LOCALE_PATHS = (PROJECT_DIR.child('locale'), )
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_ROOT = PROJECT_DIR.parent.child('static')
-STATIC_URL = '/static/'
+STATIC_URL = '/bootcamp/static/'
 
 STATICFILES_DIRS = (
     PROJECT_DIR.child('static'),
