@@ -26,6 +26,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 
 INSTALLED_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -89,7 +90,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-LANGUAGES = (   
+LANGUAGES = (  
+    ('en', 'English'), 
     ('zh-Hans', 'Chinese'),    
 )
 
